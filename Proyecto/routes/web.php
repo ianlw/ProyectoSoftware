@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SemestreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\TicketController;
@@ -9,8 +10,9 @@ use App\Http\Controllers\CoursesController;
 Route::get('/panel', [PanelController::class, 'show'])->name('panel')->middleware('auth');
 
 // Elementos creados
-Route::resource('tickets', TicketController::class);
-Route::resource('courses', CoursesController::class);
+// Route::resource('tickets', TicketController::class);
+// Route::resource('courses', CoursesController::class);
+Route::resource('/semestres', SemestreController::class);
 
 // Bienvenida y vista general
 Route::get('/', function () {
