@@ -30,8 +30,8 @@ CREATE TABLE Administrador (
     contraseña VARBINARY(255) NOT NULL
 );
 
--- Tabla Semestre
-CREATE TABLE Semestre (
+-- Tabla semestres
+CREATE TABLE semestres (
     id_semestre VARCHAR(50) PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     fecha_inicio DATETIME NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE CargaAcademica (
     FOREIGN KEY (id_docente) REFERENCES Docente(id_docente),
     FOREIGN KEY (id_curso) REFERENCES Curso(id_curso),
     FOREIGN KEY (id_malla) REFERENCES Malla(id_malla),
-    FOREIGN KEY (id_semestre) REFERENCES Semestre(id_semestre)
+    FOREIGN KEY (id_semestre) REFERENCES semestres(id_semestre)
 );
 
 -- Tabla Portafolio
